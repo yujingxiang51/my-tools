@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.game-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.game-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 15px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.game-card .emoji {
+    font-size: 3em;
+}
+
+.game-card .game-name {
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#game-container {
+    min-height: 400px;
+    display: none;
+}
+
+#game-container.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-btn button {
+    background: #f0f0f0;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.back-btn button:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Game Styles */
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.stat-item label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.game-start-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 50px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Whack-a-Mole Styles */
+.mole-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.mole-hole {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #8B4513 0%, #654321 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease;
+}
+
+.mole-hole:active {
+    transform: scale(0.95);
+}
+
+.mole {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    transition: bottom 0.2s ease;
+}
+
+.mole.up {
+    bottom: 10%;
+}
+
+/* Number Guess Styles */
+.guess-container {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.guess-input {
+    width: 150px;
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.guess-message {
+    font-size: 1.2em;
+    margin: 20px 0;
+    min-height: 30px;
+}
+
+.guess-history {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.guess-history h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.guess-history p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Memory Match Styles */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+.memory-card.flipped {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.memory-card.matched {
+    opacity: 0.5;
+    cursor: default;
+}
+
+/* Breakout Styles */
+.breakout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#breakout-canvas {
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    background: #1a1a2e;
+}
+
+.breakout-controls {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.breakout-controls p {
+    margin: 5px 0;
+}

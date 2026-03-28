@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摸鱼小游戏集合</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 摸鱼小游戏集合</h1>
+            <p class="subtitle">工作间隙放松一下</p>
+        </header>
+
+        <div class="game-menu">
+            <button class="game-card" data-game="whack-a-mole">
+                <span class="emoji">🔨</span>
+                <span class="game-name">打地鼠</span>
+            </button>
+            <button class="game-card" data-game="number-guess">
+                <span class="emoji">🔢</span>
+                <span class="game-name">数字猜谜</span>
+            </button>
+            <button class="game-card" data-game="memory-match">
+                <span class="emoji">🎴</span>
+                <span class="game-name">记忆翻牌</span>
+            </button>
+            <button class="game-card" data-game="breakout">
+                <span class="emoji">🏓</span>
+                <span class="game-name">弹球打砖块</span>
+            </button>
+        </div>
+
+        <div id="game-container"></div>
+
+        <div class="back-btn" id="backBtn" style="display: none;">
+            <button>⬅️ 返回游戏菜单</button>
+        </div>
+    </div>
+
+    <script src="games.js"></script>
+</body>
+</html>
